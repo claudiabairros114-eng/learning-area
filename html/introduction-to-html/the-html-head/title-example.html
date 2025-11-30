@@ -1,11 +1,214 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>&lt;title&gt; element</title>
-  </head>
-  <body>
-    <h1>&lt;h1&gt; element</h1>
-  </body>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site Premium</title>
+
+  <!-- Fonte bonita -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cor1: #4a90e2;
+      --cor2: #3578c3;
+      --bg: #f2f2f2;
+      --text: #333;
+    }
+
+    /* Tema escuro */
+    body.dark {
+      --bg: #121212;
+      --text: #eee;
+      --cor1: #6ca8ff;
+      --cor2: #4c7fcb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ---- MENU FIXO ---- */
+    header {
+      background: var(--cor1);
+      padding: 15px 25px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    header nav a {
+      margin-left: 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    .tema-btn {
+      background: white;
+      color: var(--cor1);
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tema-btn:hover {
+      background: #ddd;
+    }
+
+    /* ---- HERO LINDA ---- */
+    .hero {
+      margin-top: 80px;
+      height: 400px;
+      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80')
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 0 12px black;
+      font-size: 48px;
+      font-weight: bold;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ---- SEÇÃO DE CONTEÚDO ---- */
+    .content {
+      padding: 60px 25px;
+      text-align: center;
+      animation: slideUp 1.5s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 30px;
+      background: var(--cor1);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      background: var(--cor2);
+      transform: scale(1.05);
+    }
+
+    /* ---- GALERIA ---- */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 25px;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 12px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ---- RODAPÉ ---- */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU -->
+  <header>
+    <div class="logo">✨ Meu Site Premium</div>
+    <nav>
+      <a href="#home">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Galeria</a>
+    </nav>
+    <button class="tema-btn" onclick="toggleTema()">🌙 Tema</button>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero" id="home">
+    Bem-vindo ao seu site!
+  </div>
+
+  <!-- CONTEÚDO -->
+  <div class="content" id="sobre">
+    <h2>Sobre o Site</h2>
+    <p>
+      Este é um site moderno, elegante, animado e totalmente responsivo.  
+      Criado para você aprender, personalizar e impressionar!
+    </p>
+    <a class="btn" href="#galeria">Ver Galeria</a>
+  </div>
+
+  <!-- GALERIA -->
+  <div class="content">
+    <h2 id="galeria">Galeria de Imagens</h2>
+  </div>
+
+  <div class="galeria">
+    <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=80">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80">
+    <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80">
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    Criado por Você • 2025 💙
+  </footer>
+
+  <!-- SCRIPT DO TEMA ESCURO -->
+  <script>
+    function toggleTema() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
 </html>
