@@ -1,11 +1,121 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>&lt;title&gt; element</title>
-  </head>
-  <body>
-    <h1>&lt;h1&gt; element</h1>
-  </body>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>UltraSite</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #4a90e2, #9013fe);
+        height: 100vh;
+        overflow-x: hidden;
+        color: #fff;
+    }
+
+    header {
+        padding: 30px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        backdrop-filter: blur(10px);
+        background: rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    nav {
+        text-align: center;
+        padding: 15px;
+    }
+
+    nav a {
+        margin: 0 20px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        text-shadow: 0 0 10px white;
+    }
+
+    .card {
+        width: 80%;
+        margin: 40px auto;
+        background: rgba(255,255,255,0.15);
+        padding: 25px;
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        animation: fadeIn 1s ease;
+    }
+
+    button {
+        padding: 12px 25px;
+        background: #ffffff33;
+        border: 1px solid #fff;
+        color: #fff;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background: white;
+        color: #4a90e2;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+</style>
+
+</head>
+<body>
+
+<header>
+    ✨ UltraSite – Moderno, Seguro e Lindo ✨
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<div class="card" id="inicio">
+    <h2>Início</h2>
+    <p>Bem-vindo ao site mais bonito que você já pediu! 💎</p>
+    <button onclick="mostrarMensagem()">Clique aqui</button>
+    <p id="mensagem"></p>
+</div>
+
+<div class="card" id="sobre">
+    <h2>Sobre</h2>
+    <p>Esse site agora usa efeitos Glass, animações e visual moderno.</p>
+</div>
+
+<div class="card" id="contato">
+    <h2>Contato</h2>
+    <form>
+        <label>Nome:<br><input style="width:100%;padding:10px;border-radius:10px;"></label><br><br>
+        <label>Email:<br><input style="width:100%;padding:10px;border-radius:10px;"></label><br><br>
+        <label>Mensagem:<br><textarea style="width:100%;padding:10px;border-radius:10px;" rows="5"></textarea></label><br><br>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+<script>
+function mostrarMensagem() {
+    document.getElementById("mensagem").innerText = 
+        "Obrigado por clicar! 😊";
+}
+</script>
+
+</body>
 </html>
