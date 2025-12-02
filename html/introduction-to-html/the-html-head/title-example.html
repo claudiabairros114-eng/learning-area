@@ -1,11 +1,130 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>&lt;title&gt; element</title>
-  </head>
-  <body>
-    <h1>&lt;h1&gt; element</h1>
-  </body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Site Bonito</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #4a90e2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #fff;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+
+        nav a:hover {
+            color: #1b4f72;
+        }
+
+        section {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #4a90e2;
+            color: white;
+            margin-top: 20px;
+        }
+
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2e6fa8;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Bem-vindo ao Meu Site Bonito</h1>
+    <p>Agora com HTML + CSS + um pouquinho de JavaScript!</p>
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<section id="inicio">
+    <h2>Início</h2>
+    <p>Esta é a página inicial do site estilizado com CSS.</p>
+
+    <button onclick="mostrarMensagem()">Clique aqui</button>
+    <p id="mensagem" style="font-weight: bold; color: #4a90e2;"></p>
+</section>
+
+<section id="sobre">
+    <h2>Sobre</h2>
+    <p>Este site demonstra um layout simples e bonito usando HTML e CSS.</p>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+
+    <form>
+        <label>Nome:<br>
+            <input type="text" name="nome" style="width: 100%; padding: 8px;">
+        </label><br><br>
+
+        <label>Email:<br>
+            <input type="email" name="email" style="width: 100%; padding: 8px;">
+        </label><br><br>
+
+        <label>Mensagem:<br>
+            <textarea name="mensagem" rows="5" style="width: 100%; padding: 8px;"></textarea>
+        </label><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    © 2025 - Meu Site Bonito
+</footer>
+
+<script>
+    function mostrarMensagem() {
+        document.getElementById("mensagem").innerText = 
+            "Obrigado por clicar! 😄";
+    }
+</script>
+
+</body>
 </html>
